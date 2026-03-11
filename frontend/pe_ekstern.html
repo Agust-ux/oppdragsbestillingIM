@@ -7,7 +7,8 @@
     <!--styling hentet  fra W3schoold-->
     <style>
     body{
-        margin: 30px;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     #back{
@@ -21,22 +22,22 @@
         border-radius: 10px;
     }
 
+    #pe{
+        margin: 30px;
+    }
+
+    h1{
+        border-bottom: 1px solid #464646;
+        padding-bottom: 4px;
+        text-align: center;
+    }
+
     a{
         text-decoration: none;
     }
 
     button{
         background-color: white;
-    }
-
-    #spaceDivider{
-        margin: 0;
-        padding: 0;
-        line-height: 0px;
-    }
-
-    #spaceDivider, h1{
-        text-align: center;
     }
 
     table {
@@ -54,24 +55,46 @@
     border: 1px solid #000;
     }
 
-    tr:nth-child(even) {
-    background-color: #dddddd;
+    tr:nth-child(odd) {
+    background-color: #eeee;
+    }
+
+    h3{
+        font-size: 25px;
+    }
+
+    h4{
+        font-size: 20px;
+        border-bottom: 1px solid #464646;
+        padding-bottom: 4px;
+        font-weight: 600;
+    }
+
+    footer{
+        color: #ffffff;
+        background-color: #464646;
+        padding: 10px;
+        margin: 0;
+    }
+
+    footer p{
+        margin-left: 20px;
     }
     </style>
 </head>
 <body>
+    <div id="pe">
     <!--Brukt https://www.shera.no/privacy-policy som eksempel-->
     <a href="/"><button id="back">←</button></a>
     <h1>Personvernerklaring</h1>
-    <p id="spaceDivider">_____________________________________</p>
     <h3>Oppdrags bestilling IM</h3>
     <p>Oppdragsbestilling IM Elvebakken spør om rettigheter til personvernet ditt. Dette dokumentet forklarer hva slags data vi bruker og hvordan denne infoen blir behandlet.</p>
-    <p>VIKTIG Å LESE NØYE</p>
+    <p><b>VIKTIG Å LESE NØYE</b></p>
     <h4>Hva slags data har vi om deg?</h4>
     <p>Når du bruker Oppdragsbestilling skal vi hovedsaklig ha nød til informasjon son følgende</p>
     <ul>
     <li>Personlig data: Navn, profil bilde, bedrifts navn</li>
-    <li>Kontakt data: Telfon nummer, e-post</li>
+    <li>Kontakt data: Telefon nummer, e-post</li>
     <li>Oppdrags data: Tittel, beskrivelse, status, budsjett, varighet av oppdraget</li>
     </ul>
     <table>
@@ -87,6 +110,18 @@
             <td>Kontakt data</td>
             <td>Vi bruker kontakt infoen til å kontakte deg og sende oppdateringer angående oppdraget du har bestilt. Dette brukes også av elever eller lærere som jobber med oppdraget for å ta kontakt med deg.</td>
         </tr>
+        <tr>
+            <td>Oppdrags data</td>
+            <td>Dette er infoen du sender til oss når du bestiller en oppdrag. Dette handler hovedsaklig om hva oppdraget er om. Dette sendes videre til lærere og elever som jobber med oppdraget.</td>
+        </tr>
     </table>
+
+    <h4>Hvor lenge oppbevarer vi dataene dine?</h4>
+    <p>Alt av data du sender oss blir slettet øyeblikket du sletter kontoen fra nettsiden. Data blir også fjernet fra systemet vårt når oppdraget du har bestilt er ferdig levert. Om du sender en tilbakemedling blir navnet ditt/bedriftens navn og meldingen du har sendt det eneste av data vi har igjen. Dette kan vi bruke på tilbakemeldings siden vår på landnings side.</p>
+
+    <h4>Kontakt</h4>
+    <p>Om du har spørsmål eller bekymringer angående personvernerklæring kan du sende oss mail på kontakt@oppdragbestilling.no</p>
+    </div>
+    <footer><p><i>Denne personvernerklæring ble sist endret 11.03.2026</i></p></footer>
 </body>
 </html>
