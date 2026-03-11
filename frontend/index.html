@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend - test</title>
+</head>
+<body>
+    <a href="pe_ekstern.html"><button>Personvernerklæring</button></a>
+    <h1>This is a test!</h1>
+    <!--W3schools HTML select tag-->
+    <select name="roller" id="roller">
+        <option value="velg">Velg</option>
+        <option value="lærer">Lærer</option>
+        <option value="elev">Elev</option>
+        <option value="ekstern" id="ekstern"onclick="getUsers()">Ekstern</option>
+    </select>
+
+    <div id="userData"></div>
+    <script>
+        // alert('hei')
+        // console.log('helloooo');
+        fetch('/api/users')
+        .then(res => res.json())
+        .then(users => {
+            users.forEach(user => {
+                document.body.innerHTML += `
+                    <p>${user.navn} ${user.epost} (${user.role}) - ${user.status}</p>
+                `;
+                // document.getElementById(users).innerHTML += `${user.navn} ${user.epost} (${user.role}) - ${user.status}`;
+            });
+        });
+
+//        function getUsers(params) {
+//         fetch('/filter')
+//         .then(res => res.json())
+//         .then(users => {
+//             users.forEach(user => {
+//                 document.body.innerHTML += `
+//                     <p>${user.navn} ${user.epost} (${user.role}) - ${user.status}</p>
+//                 `;
+//                 // document.getElementById(users).innerHTML += `${user.navn} ${user.epost} (${user.role}) - ${user.status}`;
+//             });
+//         });
+// }
+
+        </script>
+</body>
+</html>
