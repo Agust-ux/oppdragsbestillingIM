@@ -17,7 +17,7 @@ Elever
 
 ----
 Lærere - admin tilgang
-----
+---
 - Assign oppdrag
 - Ta opp oppdrag
 - Alle oppdragene vises til ansvarlige lærere (Delt i MP og IT)
