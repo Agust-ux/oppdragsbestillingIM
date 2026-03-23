@@ -14,4 +14,21 @@ Landingsside
 ---
 Bestillingsskjema
 ---
+FRA OPPDRAGSGIVER:
+- Navn
+- Firma/Organisasjons navn
 
+KONTAKTPERSON:
+- Navn *
+- E-post *
+- Telfonnummer
+
+OPPDRAGSINFORMASJON
+- Hva ønsker du hjelp med? *
+- Oppdragstittel
+- Beskrivelse av oppdraget
+- Leveringsfrist
+- Målgruppe
+- Spesielle ønsker/krav
+- Budsjett
+- Notater felt
