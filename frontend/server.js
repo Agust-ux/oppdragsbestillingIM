@@ -43,29 +43,29 @@ app.get('/api/users', async (req, res) => {
 });
 
 //utgangspunkt fra ChatGPT
-// app.get("/filter", async (req, res) => {
-//     let conn;
-//     const role = req.query.role; // e.g., ?role=elev
+app.get("/filter", async (req, res) => {
+    let conn;
+    const role = req.query.role; // e.g., ?role=elev
 
-//     try {
-//         conn = await pool.getConnection();
+    try {
+        conn = await pool.getConnection();
 
-//         const result = await conn.query(
-//             "SELECT navn, epost, role, status FROM users WHERE role = ?",
-//             [role]
-//         );
+        const result = await conn.query(
+            "SELECT navn, epost, role, status FROM users WHERE role = ?",
+            [role]
+        );
 
-//         res.json(result);
+        res.json(result);
 
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ error: "Database error" });
-//     } finally {
-//         if (conn) conn.end();
-//     }
-// });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Database error" });
+    } finally {
+        if (conn) conn.end();
+    }
+});
 
-// console.log('result')
+console.log('result')
 
 app.listen(3003, () => {
     console.log('Server running on http://localhost:3003');

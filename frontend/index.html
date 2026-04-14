@@ -9,41 +9,81 @@
     <a href="pe_ekstern.html"><button>Personvernerklæring</button></a>
     <h1>This is a test!</h1>
     <!--W3schools HTML select tag-->
-    <select name="roller" id="roller">
-        <option value="velg">Velg</option>
-        <option value="lærer">Lærer</option>
-        <option value="elev">Elev</option>
-        <option value="ekstern" id="ekstern"onclick="getUsers()">Ekstern</option>
-    </select>
+<select name="roller" id="roller" onchange="handleRoleChange()">
+    <option value="velg">Velg</option>
+    <option value="alle">Alle</option>
+    <option value="lærer">Lærer</option>
+    <option value="elev">Elev</option>
+    <option value="ekstern">Ekstern</option>
+</select>
+
+<div id="userData"></div>
 
     <div id="userData"></div>
-    <script>
-        // alert('hei')
-        // console.log('helloooo');
-        fetch('/api/users')
-        .then(res => res.json())
-        .then(users => {
-            users.forEach(user => {
-                document.body.innerHTML += `
-                    <p>${user.navn} ${user.epost} (${user.role}) - ${user.status}</p>
+<script>
+
+function handleRoleChange() {
+
+    const role = document.getElementById("roller").value;
+
+    if (role === "ekstern") {
+        getUsers();
+    } else {
+        document.getElementById("userData").innerHTML = "";
+    }
+
+}
+
+async function getUsers(role) {
+
+    try {
+
+        const response = await fetch("/api/users");
+
+        const users = await response.json();
+
+        const container = document.getElementById("userData");
+
+        container.innerHTML = "";
+
+        users
+            .filter(user => user.role === role)
+            .forEach(user => {
+
+                container.innerHTML += `
+                    <p>
+                        ${user.navn}
+                        ${user.epost}
+                        (${user.role})
+                        - ${user.status}
+                    </p>
                 `;
-                // document.getElementById(users).innerHTML += `${user.navn} ${user.epost} (${user.role}) - ${user.status}`;
+
             });
-        });
 
-//        function getUsers(params) {
-//         fetch('/filter')
-//         .then(res => res.json())
-//         .then(users => {
-//             users.forEach(user => {
-//                 document.body.innerHTML += `
-//                     <p>${user.navn} ${user.epost} (${user.role}) - ${user.status}</p>
-//                 `;
-//                 // document.getElementById(users).innerHTML += `${user.navn} ${user.epost} (${user.role}) - ${user.status}`;
-//             });
-//         });
-// }
+    } catch (error) {
 
-        </script>
+        console.error("Feil:", error);
+
+        document.getElementById("userData").innerHTML =
+            "<p>Kunne ikke hente brukere</p>";
+
+    }
+
+}
+function handleRoleChange() {
+
+    const role = document.getElementById("roller").value;
+
+    if (role === "velg") {
+        document.getElementById("userData").innerHTML = "";
+        return;
+    }
+
+    getUsers(role);
+
+}
+
+</script>
 </body>
 </html>

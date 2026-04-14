@@ -1,34 +1,48 @@
-# Eksterne Kunder
+# EKSTERNE KUNDER
+---
+LANDINGSSIDE
+---
+Components:
 
-----
-Landingsside
-----
-- Send inn oppdrag-forespørsel- knapp
-- Oversikt over oppdrag- status sjekk
-- Cards for generelt status
-    - Aktive oppdrag
-    - Krever handling
-    - Venter på svar
-    - Uleste meldinger
+- Sende oppdrag knapp
+- Oppdrag status
+- Status kort:
+    Active Orders
+    Action Required
+    Waiting for Response
+    Unread Messages
 
 ---
-Bestillingsskjema
+BESTILLINGSSKJEMA
 ---
+
 FRA OPPDRAGSGIVER:
-- Navn
-- Firma/Organisasjons navn
+
+- company_name (string)
+- organization_number (string)
 
 KONTAKTPERSON:
-- Navn *
-- E-post *
-- Telfonnummer
 
-OPPDRAGSINFORMASJON
-- Hva ønsker du hjelp med? *
-- Oppdragstittel
-- Beskrivelse av oppdraget
-- Leveringsfrist
-- Målgruppe
-- Spesielle ønsker/krav
-- Budsjett
-- Notater felt
+- contact_name (string) *
+- email (email) *
+- phone_number (string)
+
+OPPDRAGSINFORMASJON:
+
+- request_type (string) *
+- title (string)
+- description (textarea) *
+- deadline (date) * 
+- target_audience (string) *
+- special_requirements (textarea)
+- budget (number)
+- notes (textarea)
+
+SYSTEM:
+
+On submit:
+
+- Validate required fields
+- Create order
+- Set status = NEW
+- Send confirmation email
