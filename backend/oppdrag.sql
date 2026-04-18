@@ -28,3 +28,8 @@ VALUES
 ('Kritika','kritika@test.no','elev','IT','VG2','tilgjenglig'),
 ('Jonas','jonas@test.no','lærer',NULL,NULL,'opptatt'),
 ('Emma','emma@test.no','ekstern',NULL,NULL, NULL);
+
+CREATE TABLE projects {
+    projects_id INT AUTO_INCREMENT PRIMARY KEY,
+    
+}
