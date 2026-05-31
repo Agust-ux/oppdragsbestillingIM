@@ -1,0 +1,162 @@
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.primary-btn,
+.secondary-btn,
+.project-btn{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.2s;
+    font-size:16px;
+}
+
+.primary-btn,
+.project-btn{
+    background:black;
+    color:white;
+}
+
+.secondary-btn{
+    background:white;
+    border:1px solid black;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.project-btn:hover{
+    transform:translateY(-2px);
+}
+
+.hero-image img{
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.process,
+.projects,
+.testimonials,
+.cta-section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.process h2,
+.projects h2,
+.testimonials h2,
+.cta-section h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.process-grid,
+.project-grid,
+.testimonial-grid{
+    display:grid;
+    gap:25px;
+}
+
+.process-grid{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.project-grid{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.testimonial-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.process-card,
+.project-card,
+.testimonial-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+}
+
+.number{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:black;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.project-card img{
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.project-content span{
+    display:block;
+    margin:15px 0;
+    color:#666;
+}
+
+.testimonial-card p{
+    margin-bottom:20px;
+}
+
+.cta-section{
+    text-align:center;
+}
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid,
+    .project-grid,
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+}

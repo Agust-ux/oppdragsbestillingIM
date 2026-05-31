@@ -1,0 +1,83 @@
+.dashboard{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.top-section{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.top-section h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.status-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    min-width:300px;
+}
+
+.status-box h3{
+    margin-bottom:20px;
+}
+
+.status-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:black;
+    color:white;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+.danger{
+    background:#8b0000;
+}
+
+.oppdrag-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.oppdrag-card img{
+    width:180px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.primary-btn{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .top-section{
+        flex-direction:column;
+    }
+
+    .oppdrag-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
